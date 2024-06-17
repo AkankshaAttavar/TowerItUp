@@ -1,0 +1,919 @@
+fileFormatVersion: 2
+guid: 9faa5e82c5407437d8cfc73d70712bee
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 145
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 869
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23806f754a1554d339160818e76eb0fb
+      internalID: 1941849599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 869
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c5f7f4860e24fcc9bc256b1d789a56
+      internalID: -359974218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 869
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6fa38cd63634418a9b97a1676598e4
+      internalID: -246395443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_3
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 869
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75236a2af5c174c7992ee51a1c06da0c
+      internalID: 1622647512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_4
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 869
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580729eecd3074625b9ce1f57b7e3545
+      internalID: -1119610133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_5
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 869
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f7e4f7fdfe94fce8f1e0e9bd6ae8c6
+      internalID: -1343644178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 724
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4281ccb48447a459bb618b5c57828604
+      internalID: 1734917278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_7
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 724
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2aa02af5bb94afe893773111470150
+      internalID: 948010075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_8
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 724
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab8e1643e1ed4411887800243107aa2
+      internalID: -1631411736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_9
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 724
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cfbbdb2fd2c4f26be63465f31f946d
+      internalID: 192697586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_10
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 724
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4411bada385184a9895a22e66b0526c0
+      internalID: -11859391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_11
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 724
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523763c6fa6a14c6a99c935d31e39161
+      internalID: -595382289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 579
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1cea1e7520834ae09851b65a293d6f7
+      internalID: 282958539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_13
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 579
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63bcb71ed21f47f9a314a3768f79c6d
+      internalID: 1557679542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_14
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 579
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32eb5849079f4957ac59873598425ea
+      internalID: -872039711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_15
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 579
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f288b0ba26b1446269b1aab5dfe09afc
+      internalID: -1053924702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_16
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 579
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203e733263a234099a8f8337d3cf6ebf
+      internalID: -912281812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_17
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 579
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60275fa81ffee4395b75b0f0a0dc48cd
+      internalID: 999857092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_18
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 434
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5936ccbd1505403f8c2167c70feb4b3
+      internalID: -1556943795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_19
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 434
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6f060e9bb774653991a08ff5b5e865
+      internalID: 309695113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_20
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 434
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe935d2946ff2427e905ad58f92241a5
+      internalID: 1953800542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_21
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 434
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd07f45f157a84923ac9a63cbc3aa47e
+      internalID: 1576131577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_22
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 434
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8681d127e45054a99afecd2edd45afd5
+      internalID: 723594470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_23
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 434
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85dea87240b31452dab6ede04d8119aa
+      internalID: 1043515705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_24
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 289
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f320635fc9043d887c1721c5c62637
+      internalID: -759360866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_25
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 289
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97cbc040a69e945a89b740a15983a217
+      internalID: -385723190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_26
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 289
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a13f79e3b7441c1a8df3b51311539d
+      internalID: 1691850993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_27
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 289
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0921f1459114ac18b67fb7cd3adce2
+      internalID: -1345009986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_28
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 289
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708a7c1738bb84560862fdb5926c53f0
+      internalID: 1953839537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_29
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 289
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a7fed4d8c634ce2ada65b6eee11a35
+      internalID: -1447537990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_30
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 144
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad95c5d0b946044f094162e2d41fd760
+      internalID: -64673940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_31
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 144
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b638ac9f70214a56abf72dac5bcc10a
+      internalID: 2001554355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_32
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 144
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c572e746524e4728b9dcfc20a125668
+      internalID: -369766170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_33
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 144
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79f8f7990e5b44b9a9477fec853ce4a
+      internalID: 1112647822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_34
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 144
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75206e97fcdb4727a0732560824744d
+      internalID: 1606531950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_sprite_tower_building_game_35
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 144
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d7b584435f147f382a62c52f65ac8d
+      internalID: -97390911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      square_sprite_tower_building_game_0: 1941849599
+      square_sprite_tower_building_game_1: -359974218
+      square_sprite_tower_building_game_10: -11859391
+      square_sprite_tower_building_game_11: -595382289
+      square_sprite_tower_building_game_12: 282958539
+      square_sprite_tower_building_game_13: 1557679542
+      square_sprite_tower_building_game_14: -872039711
+      square_sprite_tower_building_game_15: -1053924702
+      square_sprite_tower_building_game_16: -912281812
+      square_sprite_tower_building_game_17: 999857092
+      square_sprite_tower_building_game_18: -1556943795
+      square_sprite_tower_building_game_19: 309695113
+      square_sprite_tower_building_game_2: -246395443
+      square_sprite_tower_building_game_20: 1953800542
+      square_sprite_tower_building_game_21: 1576131577
+      square_sprite_tower_building_game_22: 723594470
+      square_sprite_tower_building_game_23: 1043515705
+      square_sprite_tower_building_game_24: -759360866
+      square_sprite_tower_building_game_25: -385723190
+      square_sprite_tower_building_game_26: 1691850993
+      square_sprite_tower_building_game_27: -1345009986
+      square_sprite_tower_building_game_28: 1953839537
+      square_sprite_tower_building_game_29: -1447537990
+      square_sprite_tower_building_game_3: 1622647512
+      square_sprite_tower_building_game_30: -64673940
+      square_sprite_tower_building_game_31: 2001554355
+      square_sprite_tower_building_game_32: -369766170
+      square_sprite_tower_building_game_33: 1112647822
+      square_sprite_tower_building_game_34: 1606531950
+      square_sprite_tower_building_game_35: -97390911
+      square_sprite_tower_building_game_4: -1119610133
+      square_sprite_tower_building_game_5: -1343644178
+      square_sprite_tower_building_game_6: 1734917278
+      square_sprite_tower_building_game_7: 948010075
+      square_sprite_tower_building_game_8: -1631411736
+      square_sprite_tower_building_game_9: 192697586
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
