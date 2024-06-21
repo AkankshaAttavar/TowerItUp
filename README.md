@@ -2,7 +2,7 @@
 
 TowerItUp is an on-chain block stacking game where players compete to achieve the highest score by carefully stacking blocks. Each block drop is recorded as a blockchain transaction, ensuring fairness and transparency.
 
-![TowerItUp Game Concept]([game_concept.png](https://drive.google.com/file/d/1Zhbt_jRXQkzQ6sAyeZsI8ON_5kYfNRw8/view?usp=sharing))
+![TowerItUp Game Concept]([game_concept.png](https://github.com/AkankshaAttavar/TowerItUp/blob/main/Assets/ToweritUp.jpg))
 
 ## Game Concept
 
