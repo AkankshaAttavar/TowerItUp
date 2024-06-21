@@ -25,7 +25,7 @@ Inspired by colorful cityscapes, TowerItUp challenges players to build the talle
 
 ## Getting Started
 
-[Include instructions for setting up the development environment, installing dependencies, and running the game locally]
+[TBD]
 
 ## How to Play
 
