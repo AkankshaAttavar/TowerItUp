@@ -7,6 +7,9 @@ TagManager:
   - Floor
   - Block
   - Ground
+  - Background
+  - Hook
+  - Platform
   layers:
   - Default
   - TransparentFX
