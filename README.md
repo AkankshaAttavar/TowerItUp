@@ -18,10 +18,10 @@ Inspired by colorful cityscapes, TowerItUp challenges players to build the talle
 
 ## Technology Stack
 
-- Blockchain: [Specify your chosen blockchain, e.g., Ethereum, Solana, etc.]
-- Smart Contracts: [Specify language, e.g., Solidity, Rust]
-- Frontend: [Specify framework, e.g., React, Vue.js]
-- Backend: [If applicable, specify backend technology]
+- Blockchain: [Starknet]
+- Smart Contracts: [Cairo]
+- Frontend: [Unity]
+- Backend: [Dojo.unity, Dojo Contracts]
 
 ## Getting Started
 
