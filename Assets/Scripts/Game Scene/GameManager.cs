@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro; // Add this line to use TextMeshPro
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Networking; // Add this for UnityWebRequest
 
 public class GameManager : MonoBehaviour
 {
@@ -18,31 +20,33 @@ public class GameManager : MonoBehaviour
     public float minDistance = 2.0f; // Minimum distance between the hook and top block
     public float maxDistance = 5.0f; // Maximum distance between the hook and top block
     public int alignmentBonusPoints = 100; // Points awarded for perfectly aligned blocks
-    public float alignmentMargin = 0.1f; // Margin of error for perfect alignment
-
+    public float alignmentMargin = 0.05f; // Margin of error for perfect alignment
+    public EndGamePanelController endGamePanelController;
     private int blockCount = 0; // Keep track of the number of spawned blocks
-    private int collisionEventCount = 0; // Keep track of the number of collision events
-    private float lastCollisionTime = 0; // Track the time of the last collision event
+
+    private int collisionEventCount = 0;
+    private float lastCollisionTime = 0;
     private GameObject currentBlock;
     private GameObject previousBlock;
-    public List<GameObject> stackedBlocks = new List<GameObject>(); // Track stacked blocks that moved the hook up
+    public List<GameObject> stackedBlocks = new List<GameObject>();
 
-    // Timer variables
     private bool timerStarted = false;
     private float timer = 0f;
-    public float gameDuration = 60f; // Game duration in seconds (1 minute)
+    public float gameDuration = 60f;
 
-    // UI references
-    public TextMeshProUGUI timerText; // Use TextMeshProUGUI for UI text
-    public TextMeshProUGUI timesUpText; // Use TextMeshProUGUI for UI text
-    public TextMeshProUGUI scoreText; // Use TextMeshProUGUI for score text
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timesUpText;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI finalScoreText;
+    public Button shareButton;
+    public Button mainMenuButton;
+    public Button replayButton;
 
-    // Score variable
     private int score = 0;
+    private bool isGameOver = false;
 
-    private CameraController cameraController; // Reference to the CameraController
+    private CameraController cameraController;
 
-    // Track position of the last placed block
     public Vector3 LastPlacedBlockPosition { get; private set; }
 
     void Start()
@@ -50,31 +54,33 @@ public class GameManager : MonoBehaviour
         SetInitialHookPosition();
         SpawnNewBlock();
         cameraController = FindObjectOfType<CameraController>();
-        timesUpText.gameObject.SetActive(false); // Ensure "Time's Up" text is hidden initially
-        UpdateScoreText(); // Initialize score text
+        timesUpText.gameObject.SetActive(false);
+        endGamePanelController.gameObject.SetActive(false);
+        shareButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
+        UpdateScoreText();
+
+
     }
 
     void Update()
     {
-        // Start the timer when space is pressed for the first time
-        if (!timerStarted && Input.GetKeyDown(KeyCode.Space))
+        if (!timerStarted && Input.GetMouseButtonDown(0))
         {
             timerStarted = true;
         }
 
-        // Update the timer if it has started
         if (timerStarted)
         {
             timer += Time.deltaTime;
             float timeRemaining = gameDuration - timer;
             if (timeRemaining > 0)
             {
-                timerText.text = "Time: " + timeRemaining.ToString("F2"); // Display remaining time
+                timerText.text = " " + timeRemaining.ToString("F2");
             }
             else
             {
-                timerText.text = "Time: 0.00";
-                timesUpText.gameObject.SetActive(true); // Display "Time's Up" text
+                timerText.text = "0.00";
                 StartCoroutine(EndGame());
             }
         }
@@ -89,21 +95,22 @@ public class GameManager : MonoBehaviour
 
     public void SpawnNewBlock()
     {
+        if (isGameOver) return;
+
         if (currentBlock != null)
         {
             previousBlock = currentBlock;
         }
 
-        // Adjust the spawn position to reduce the gap between the hook and the new block
         Vector3 spawnPosition = new Vector3(hook.position.x, hook.position.y - blockHeight / 4, hook.position.z);
         currentBlock = Instantiate(blockPrefab, spawnPosition, Quaternion.identity);
         currentBlock.tag = "Block";
         hook.GetComponent<Hook>().AttachBlock(currentBlock.transform);
 
-        // Increase hook radius and speed after every 10 blocks spawned
         blockCount++;
         if (blockCount % 10 == 0)
         {
+            FreezeAllBlocks();
             Hook hookScript = hook.GetComponent<Hook>();
             hookScript.IncreaseRadiusAndSpeed(0.8f, 0.1f);
         }
@@ -122,18 +129,17 @@ public class GameManager : MonoBehaviour
 
     public void OnBlockAttached(GameObject block)
     {
-        stackedBlocks.Add(block); // Track this block as it moved the hook up
+        stackedBlocks.Add(block);
         if (block != null)
         {
-            LastPlacedBlockPosition = block.transform.position; // Update the position of the last placed block
+            LastPlacedBlockPosition = block.transform.position;
         }
 
         CheckAlignment(block);
 
         StartCoroutine(AdjustHookPositionWithDelay());
 
-        // Increase score when a block is attached
-        score += 10; // Adjust the score increment as needed
+        score += 10;
         UpdateScoreText();
     }
 
@@ -144,7 +150,6 @@ public class GameManager : MonoBehaviour
             GameObject previousBlock = stackedBlocks[stackedBlocks.Count - 2];
             if (Mathf.Abs(block.transform.position.x - previousBlock.transform.position.x) <= alignmentMargin)
             {
-                // Award bonus points for perfect alignment
                 AwardAlignmentBonus();
             }
         }
@@ -152,20 +157,18 @@ public class GameManager : MonoBehaviour
 
     private void AwardAlignmentBonus()
     {
-        // Award points for perfect alignment
         Debug.Log("Perfect Alignment! Awarded " + alignmentBonusPoints + " points.");
-        score += alignmentBonusPoints; // Add bonus points to score
+        score += alignmentBonusPoints;
         UpdateScoreText();
     }
 
     private void UpdateScoreText()
     {
-        scoreText.text = "Score: " + score; // Update score text
+        scoreText.text = "Score is" + " " + score;
     }
 
     public void OnBlockDestroyed(GameObject block)
     {
-        // Only adjust hook position if this block was previously counted
         if (stackedBlocks.Contains(block))
         {
             stackedBlocks.Remove(block);
@@ -179,17 +182,15 @@ public class GameManager : MonoBehaviour
 
         if (currentTime - lastCollisionTime > collisionTimeWindow)
         {
-            collisionEventCount++; // Increment collision event count
-            lastCollisionTime = currentTime; // Update last collision time
-            CheckGameOver(); // Check if the game should stop
+            collisionEventCount++;
+            lastCollisionTime = currentTime;
+            CheckGameOver();
         }
 
-        // Destroy the block if it hits the ground
         stackedBlocks.Remove(block);
         Destroy(block);
 
-        // Deduct score when a block falls
-        score -= 100; // Adjust the score deduction as needed
+        score -= 100;
         UpdateScoreText();
     }
 
@@ -198,28 +199,66 @@ public class GameManager : MonoBehaviour
         if (collisionEventCount >= maxCollisionsAllowed)
         {
             Debug.Log("Game Over!");
-            StartCoroutine(EndGame()); // Start the coroutine to pan the camera
+            StartCoroutine(EndGame());
         }
     }
 
     private IEnumerator EndGame()
     {
-        // Pan the camera to the platform
+        isGameOver = true; // Set the game over state
+                           // Pan the camera to the platform
         if (cameraController != null && platform != null)
         {
             yield return cameraController.PanToPosition(platform.transform.position);
         }
 
-        // Stop the game (e.g., by reloading the scene or showing a game over screen)
-        // Here, we simply reload the current scene for demonstration purposes
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        yield return new WaitForSeconds(1f);
+
+        // Fade to black and show "Time's Up" text
+        StartCoroutine(FadeToBlack());
+
+        // Show final score and buttons after the fade
+        finalScoreText.gameObject.SetActive(true);
+        finalScoreText.text = "Final Score: " + score;
+        shareButton.gameObject.SetActive(true);
+        replayButton.gameObject.SetActive(true);
+        mainMenuButton.gameObject.SetActive(true);
+        endGamePanelController.gameObject.SetActive(true); // Show end game panel
     }
+
+
+
+    private IEnumerator FadeToBlack()
+    {
+        Camera mainCamera = Camera.main;
+        if (mainCamera == null)
+        {
+            yield break;
+        }
+
+        float fadeDuration = 2f;
+        float elapsedTime = 0f;
+        Color initialColor = mainCamera.backgroundColor;
+        Color targetColor = Color.black;
+
+        while (elapsedTime < fadeDuration)
+        {
+            mainCamera.backgroundColor = Color.Lerp(initialColor, targetColor, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        mainCamera.backgroundColor = targetColor;
+        timesUpText.gameObject.SetActive(false);
+    }
+
 
     private IEnumerator AdjustHookPositionWithDelay()
     {
         yield return new WaitForSeconds(0.5f); // Introduce a small delay
         AdjustHookPosition();
     }
+
 
     private void AdjustHookPosition()
     {
@@ -259,6 +298,21 @@ public class GameManager : MonoBehaviour
             hook.GetComponent<Hook>().AdjustHookPosition(hook.position);
 
             Debug.Log("Adjusted Hook Position: " + hook.position.y);
+        }
+    }
+
+    private void FreezeAllBlocks()
+    {
+        foreach (var block in stackedBlocks)
+        {
+            if (block != null)
+            {
+                var rb = block.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+                }
+            }
         }
     }
 }

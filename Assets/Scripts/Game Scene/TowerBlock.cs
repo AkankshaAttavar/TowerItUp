@@ -9,15 +9,20 @@ public class TowerBlock : MonoBehaviour
     private GameManager gameManager;
     private Hook hook;
     private BoxCollider2D boxCollider;
+    private AudioSource audioSource;
+    private float soundCooldown = 1.0f; // Cooldown duration in seconds
+    private float lastSoundTime; // Time when the sound was last played
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        rb.gravityScale = 0;
-        rb.mass = 5;
-        rb.drag = 0;
-        rb.angularDrag = 0.05f;
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+
+        rb.gravityScale = 1;
+        rb.mass = 1;
+        rb.drag = 2;
+        rb.angularDrag = 3f;
 
         gameManager = FindObjectOfType<GameManager>();
         hook = FindObjectOfType<Hook>();
@@ -39,7 +44,7 @@ public class TowerBlock : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isReleased)
+        if (Input.GetMouseButtonDown(0) && !isReleased)
         {
             ReleaseBlock();
             if (gameManager != null)
@@ -63,58 +68,35 @@ public class TowerBlock : MonoBehaviour
     {
         if (isReleased)
         {
-            if (collision.gameObject.CompareTag("Block"))
+            if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Ground"))
             {
-                if (IsAlignedWithBlock(collision.gameObject))
+                // Play collision sound only if colliding with Block or Ground and cooldown has passed
+                if (audioSource != null && Time.time - lastSoundTime > soundCooldown)
                 {
-                    // Make the blocks stick together
-                    FreezeBlockAndBelow();
-                    TowerBlock otherBlock = collision.gameObject.GetComponent<TowerBlock>();
-                    if (otherBlock != null)
+                    audioSource.Play();
+                    lastSoundTime = Time.time;
+                }
+
+                if (collision.gameObject.CompareTag("Block"))
+                {
+                    if (gameManager != null)
                     {
-                        otherBlock.FreezeBlockAndBelow();
+                        // Freeze blocks if alignment is within margin
+                        if (Mathf.Abs(transform.position.x - collision.transform.position.x) <= gameManager.alignmentMargin)
+                        {
+                            FreezeBlockAndBelow(collision.gameObject);
+                        }
+
+                        gameManager.OnBlockAttached(this.gameObject);
                     }
                 }
-                if (gameManager != null)
+                else if (collision.gameObject.CompareTag("Ground"))
                 {
-                    gameManager.OnBlockAttached(this.gameObject);
-                }
-            }
-            else if (collision.gameObject.CompareTag("Ground"))
-            {
-                if (gameManager != null)
-                {
-                    gameManager.OnBlockFallen(this.gameObject); // Notify GameManager about the fallen block
-                }
-            }
-        }
-    }
-
-    private bool IsAlignedWithBlock(GameObject otherBlock)
-    {
-        float alignmentMargin = 0.1f; // 10% margin of error
-        float offsetX = Mathf.Abs(transform.position.x - otherBlock.transform.position.x);
-        return offsetX <= alignmentMargin * boxCollider.size.x;
-    }
-
-    public void FreezeBlockAndBelow()
-    {
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-        if (gameManager != null)
-        {
-            transform.parent = gameManager.transform;
-
-            // Freeze all blocks below
-            foreach (var block in gameManager.stackedBlocks)
-            {
-                if (block != null && block.transform.position.y <= transform.position.y)
-                {
-                    Rigidbody2D blockRb = block.GetComponent<Rigidbody2D>();
-                    if (blockRb != null)
+                    if (gameManager != null)
                     {
-                        blockRb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+                        gameManager.OnBlockFallen(this.gameObject); // Notify GameManager about the fallen block
                     }
-                    block.transform.parent = gameManager.transform;
+                    Destroy(gameObject); // Destroy the block when it hits the ground
                 }
             }
         }
@@ -127,6 +109,27 @@ public class TowerBlock : MonoBehaviour
             if (gameManager != null)
             {
                 gameManager.OnBlockFallen(this.gameObject); // Notify GameManager about the fallen block
+            }
+        }
+    }
+
+    public void FreezeBlockAndBelow(GameObject otherBlock)
+    {
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        transform.parent = gameManager.transform;
+
+        // Freeze the block below if it has alignment margin below 0.05f
+        if (gameManager.stackedBlocks.Count > 1)
+        {
+            GameObject previousBlock = gameManager.stackedBlocks[gameManager.stackedBlocks.Count - 2];
+            if (Mathf.Abs(previousBlock.transform.position.x - otherBlock.transform.position.x) <= 0.05f)
+            {
+                Rigidbody2D previousRb = previousBlock.GetComponent<Rigidbody2D>();
+                if (previousRb != null)
+                {
+                    previousRb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+                }
+                previousBlock.transform.parent = gameManager.transform;
             }
         }
     }

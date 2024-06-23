@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform hook; // Reference to the hook
-    public float offsetY = 4f; // Offset for the camera position relative to the hook
+    public float offsetY = 5f; // Offset for the camera position relative to the hook
     public float smoothSpeed = 0.125f; // Speed of the smooth camera movement
 
     void LateUpdate()
@@ -25,6 +25,8 @@ public class CameraController : MonoBehaviour
         }
     }
 
+
+
     public IEnumerator PanToPosition(Vector3 targetPosition)
     {
         Vector3 startPosition = transform.position;
@@ -41,4 +43,5 @@ public class CameraController : MonoBehaviour
 
         transform.position = endPosition;
     }
+
 }
