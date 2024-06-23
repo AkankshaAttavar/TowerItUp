@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 7c2c7ed4ff3454c5e858d92028ee3ac0
   - enabled: 1
-    path: Assets/Starknet Unity/Scenes/ConnectWallet.unity
-    guid: 0318f5dfc3bad4dbe98010fe94924e31
-  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Endless.unity
+    guid: f720cc78262724a629475629da038d1e
+  - enabled: 1
+    path: Assets/Starknet Unity/Scenes/ConnectWallet.unity
+    guid: 0318f5dfc3bad4dbe98010fe94924e31
   m_configObjects: {}

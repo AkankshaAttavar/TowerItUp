@@ -61,7 +61,7 @@ public class EndGamePanelController : MonoBehaviour
             screenshotSavedText.gameObject.SetActive(true);
         }
 
-        string finalScore = finalScoreText != null ? finalScoreText.text.Replace("Final Score: ", "") : "N/A";
+        string finalScore = finalScoreText != null ? finalScoreText.text.Replace("Final Score Is", "") : "N/A";
         string tweet = $"Check out my score in Tower It Up! :- ' Final Score: {finalScore} '.\n\n[Screenshot saved at: {screenshotPath} Delete this message and attach the screenshot manually]";
         string url = "http://twitter.com/intent/tweet?text=" + UnityWebRequest.EscapeURL(tweet);
 

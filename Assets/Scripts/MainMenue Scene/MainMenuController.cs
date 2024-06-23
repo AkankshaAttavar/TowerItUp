@@ -18,6 +18,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void GoToEndless()
+    {
+        SceneManager.LoadScene("Endless");
+    }
+
     public void GoToConnectWallet()
     {
         SceneManager.LoadScene("ConnectWallet");
