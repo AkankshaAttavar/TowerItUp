@@ -1,0 +1,20 @@
+kind = "DojoModel"
+class_hash = "0x37c0f4ab0a160e9b8c0e892b115cb6d32a6c3f111661054a2c2667f8814f7e8"
+original_class_hash = "0x37c0f4ab0a160e9b8c0e892b115cb6d32a6c3f111661054a2c2667f8814f7e8"
+abi = "manifests/dev/abis/base/models/dojo_starter_models_block_block.json"
+name = "dojo_starter::models::block::block"
+
+[[members]]
+name = "gameId"
+type = "u32"
+key = true
+
+[[members]]
+name = "x"
+type = "u16"
+key = false
+
+[[members]]
+name = "y"
+type = "u16"
+key = false

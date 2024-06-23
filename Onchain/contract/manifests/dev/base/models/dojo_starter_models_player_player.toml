@@ -1,0 +1,15 @@
+kind = "DojoModel"
+class_hash = "0x5d03fa96cdfa48ba4562980376b64373179839bea08afd222f15af01dd51095"
+original_class_hash = "0x5d03fa96cdfa48ba4562980376b64373179839bea08afd222f15af01dd51095"
+abi = "manifests/dev/abis/base/models/dojo_starter_models_player_player.json"
+name = "dojo_starter::models::player::player"
+
+[[members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "score"
+type = "u64"
+key = false

@@ -23,7 +23,7 @@ Inspired by colorful cityscapes, TowerItUp challenges players to build the talle
 - Frontend: [Unity]
 - Backend: [Dojo.unity, Dojo Contracts]
 
-## Getting Started
+## Getting Started 
 
 [TBD]
 
